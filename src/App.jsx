@@ -17,6 +17,7 @@ import HelpPage from './pages/help';
 import CareersPage from './pages/careers';
 import ServicesPage from './pages/service';
 import OrderDetailsPage from './pages/orderdetail';
+import ServiceDetailsPage from './pages/servicedetail';
 
 const NAVIGATION = [
   {
@@ -107,10 +108,16 @@ function RenderPage({ path, router }) {
       )
     case 'help':
       return <HelpPage />;
+      
     case 'careers':
       return <CareersPage />;
+
     case 'service':
-      return <ServicesPage />;
+      return sub ? (
+        <ServiceDetailsPage userId={sub} router={router} />
+      ) : (
+        <ServicesPage router={router} />
+      )
     case 'dashboard':
     default:
       return <DashboardContent />;
