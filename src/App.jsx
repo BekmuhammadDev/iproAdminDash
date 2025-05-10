@@ -111,7 +111,6 @@ function RenderPage({ path, router }) {
       
     case 'careers':
       return <CareersPage />;
-
     case 'service':
       return sub ? (
         <ServiceDetailsPage userId={sub} router={router} />
