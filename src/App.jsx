@@ -10,21 +10,27 @@ import Portfolio from './pages/portfolio/Portfolio';
 import User from './pages/users/User';
 import Careers from './pages/careers/Careers';
 import Help from './pages/help/Help';
+import AddService from './pages/service/AddService';
+import Login from './pages/auth/Login';
+import Notfound from './components/Notfound';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={ADMIN_URL} element={<AdminLayout />}>
+        <Route path='/' element={<Login/>}/>
+    <Route path={ADMIN_URL} element={<AdminLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="order" element={<Order />} />
         <Route path="add-order" element={<AddOrder />}/>
         <Route path='service' element={<Service/>}/>
+        <Route path='service/add' element={<AddService/>}/>
         <Route path='portfolio' element={<Portfolio/>}/>
         <Route path='user' element={<User/>}/>
         <Route path='careers' element={<Careers/>}/>
         <Route path='help' element={<Help/>}/>
       </Route>
+        <Route path='*' element={<Notfound/>}/>
       </Routes>
     </BrowserRouter>
   );

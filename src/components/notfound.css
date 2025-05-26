@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body {
+    height: 100vh;
+   background: #00091e;
+   color:#fff;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   font-family: 'Titillium Web', sans-serif;
+}
+
+.h2 {
+   font-weight: 700;
+   font-size: 25vh;
+   margin: 0;
+   line-height: 1;
+   animation: light 4s steps(1) infinite;
+}
+
+.button{
+    margin-top: 25px;
+    width: 200px;
+    padding: 10px 10px;
+    border-radius: 14px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+    border:  solid 2px white ;
+    background-color: #00091e;
+}
+h2 + p {
+   font-size: 3vh;
+}
+@keyframes light {
+   33% {
+      text-shadow: 0 0 20px #e900fe;
+   }
+   66% {
+      text-shadow: 0 0 20px #6de33c;
+   }
+}

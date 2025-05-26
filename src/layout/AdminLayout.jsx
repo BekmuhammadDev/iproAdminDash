@@ -17,6 +17,7 @@ import {
   Description as DescriptionIcon,
   Layers as LayersIcon,
 } from '@mui/icons-material';
+import Notfound from '../components/Notfound';
 
 const NAVIGATION = [
   { kind: 'header', title: 'Main items' },
@@ -66,15 +67,26 @@ function useDemoRouter() {
 const AdminLayout = ({ window }) => {
   const router = useDemoRouter();
   const demoWindow = window ? window() : undefined;
+  const token =sessionStorage.getItem("token")
 
   return (
-    <AppProvider navigation={NAVIGATION} router={router} theme={demoTheme} window={demoWindow}>
+    <>
+    {!token?(
+     <Notfound/>
+    ):(
+
+
+      <>
+      <AppProvider navigation={NAVIGATION} router={router} theme={demoTheme} window={demoWindow}>
       <DashboardLayout>
         <PageContainer>
           <Outlet />
         </PageContainer>
       </DashboardLayout>
     </AppProvider>
+      </>
+    )}
+    </>
   );
 };
 
